@@ -86,9 +86,8 @@ Full wiring diagram with chip pinout: `docs/wiring.md`.
 
 | Item | Spec | Notes |
 |------|------|-------|
-| HDMI 1-in 2-out splitter | 4K HDR passthrough | Sits between receiver HDMI out and TV. ~€25–40. |
-| MS2109-based USB capture card | 1080p30 MJPEG max | Sufficient for LED colour sampling. ~€10–15. |
-| HDCP-stripping splitter | HDCP 2.2/2.3 bypass | Only needed to avoid disabling PS5 HDCP. ~€40–60 (e.g. HBAVLINK). Optional — see PS5 note below. |
+| EZCOO EZ-SP12H2 | 4K HDR passthrough | Sits between receiver HDMI out and TV. OUT 1 → TV (4K HDR), OUT 2 → capture card (built-in scaler outputs 1080p). |
+| Rullz MS2109 Mini Coffee | 1080p30 MJPEG | Set to 1080p30 in HyperHDR — 1080p60 has a known crash bug. No loop-out needed (EZCOO handles splitting). |
 
 **PS5 HDCP:** PS5 enables HDCP by default, which blocks all capture cards. Disable it: PS5 Settings → System → HDMI → Enable HDCP → off. Side effect: Netflix/Disney+ on PS5 require HDCP re-enabled. Acceptable since Jellyfin is the primary use. Nintendo Switch has no HDCP at all.
 
