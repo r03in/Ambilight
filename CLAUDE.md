@@ -180,6 +180,7 @@ LibreELEC rootfs is read-only. Writable paths that persist across reboots:
 - [ ] Confirm direct play is enabled in the Jellyfin for Kodi add-on settings
 - [ ] During a test stream, check Jellyfin dashboard (Dashboard → Playback) shows "Direct Play" not "Transcoding" — RPi 5 hardware-decodes H.264, H.265/HEVC, and AV1 natively so server CPU load should drop vs the old Chromecast
 - [ ] HyperHDR DRM framebuffer grabber is active during playback (check HyperHDR web UI at `:8090` — signal indicator should be green)
+- [ ] **(Phase 2)** Rullz MS2109 capture card: set to **1080p30 MJPEG** in HyperHDR — do NOT use 1080p60, known bug causes capture to crash
 - [ ] LED strip lights up and colours match screen content
 - [ ] LED strip corners align with TV corners (adjust LED geometry in HyperHDR if needed)
 - [ ] No colour shift or dimming toward the far end of the strip — if visible, inject power at both ends
