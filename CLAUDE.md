@@ -111,7 +111,7 @@ Full wiring diagram with chip pinout: `docs/wiring.md`.
 
 **Phase 1 grabber:** DRM/KMS framebuffer grabber in HyperHDR. Captures directly from the Kodi framebuffer including HDR-tone-mapped content. No capture card required.
 
-**Phase 2 grabber:** USB grabber (/dev/video0). Switch manually or via `scripts/switch_source.sh` when changing between RPi (Kodi) and receiver sources (Switch/PS5).
+**Phase 2 grabber:** USB grabber (/dev/video0) used exclusively — no source switching needed. The splitter sits downstream of the receiver, so the capture card always sees whatever the receiver is outputting (Kodi, PS5, or Switch). HyperHDR captures the correct content automatically when you change receiver input. The DRM framebuffer grabber is disabled in Phase 2.
 
 ---
 
@@ -157,11 +157,7 @@ systemctl restart service.hyperhdr
 journalctl -u service.hyperhdr -f
 ```
 
-**Phase 2 — switch grabber source:**
-```bash
-bash scripts/switch_source.sh <rpi-ip> drm   # Kodi/Jellyfin active
-bash scripts/switch_source.sh <rpi-ip> usb   # Switch/PS5 active
-```
+**Phase 2 — no source switching needed.** The USB grabber captures whatever the receiver outputs. Only one-time setup: resolve PS5 HDCP (disable in PS5 settings, or use HDCP-stripping splitter).
 
 ---
 
