@@ -5,7 +5,6 @@ set -euo pipefail
 
 RPI_IP="${1:?Usage: setup.sh <rpi-ip>}"
 RPI_USER="root"
-RPI_PASS="libreelec"
 SCP="scp -o StrictHostKeyChecking=no"
 SSH="ssh -o StrictHostKeyChecking=no ${RPI_USER}@${RPI_IP}"
 
